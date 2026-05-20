@@ -1,0 +1,23 @@
+N = int(input())
+contador = N
+cX = []
+cY = []
+caiu = False
+
+for i in range(N):
+    N = input()
+    c = N.split()
+    cX.append(int(c[0]))
+    cY.append(int(c[1]))
+
+for i in range(contador):
+    if caiu:
+        break
+    for j in range (contador):
+        if i != j and cX[i] == cX[j] and cY[i] == cY[j]:
+            caiu = True
+            print(1)
+            break
+
+if caiu == False:
+    print (0)
