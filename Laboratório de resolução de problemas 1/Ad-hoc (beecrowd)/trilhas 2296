@@ -1,0 +1,39 @@
+N = int(input( ))
+esforco = -1
+
+#A cada trilha:
+for i in range (1, N+ 1):
+    H = -1
+    ida = 0
+    volta = 0
+    entradas = input()
+    dados = entradas. split()
+    M = int(dados[0])
+
+    #A cada medição
+    for j in range(1, M + 1):
+        Hi = int (dados[j])
+        if H >= 0:
+            if (Hi - H) > 0: 
+                ida = ida + (Hi - H)
+            elif (Hi - H) < 0:
+                volta = volta - (Hi - H)
+        H = Hi
+
+#A cada trilha
+    if ida > volta and volta < esforco:
+        esforco = volta
+        menor = i
+    elif ida < volta and ida < esforco:
+        esforco = ida
+        menor = i
+    elif ida > volta and esforco == -1:
+        esforco = volta
+        menor = i
+    elif ida < volta and esforco == -1:
+        esforco = ida
+        menor = i
+    if esforco == 0:
+        break
+
+print (menor)
