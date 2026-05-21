@@ -1,0 +1,16 @@
+N = int(input())
+XY = []
+caiu = 0
+
+for i in range(N):
+    c = input()
+    XY.append(c)
+
+XY.sort()
+
+for i in range(N-1):
+    if XY[i] == XY[i+1]:
+        caiu = 1
+        break
+
+print (caiu)

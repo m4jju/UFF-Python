@@ -1,0 +1,20 @@
+N = int(input())
+cX = []
+cY = []
+caiu = 0
+
+for i in range(N):
+    linha = input()
+    c = linha.split()
+    cX.append(int(c[0]))
+    cY.append(int(c[1]))
+
+for i in range(N):
+    if caiu:
+        break
+    for j in range (N):
+        if i != j and cX[i] == cX[j] and cY[i] == cY[j]:
+            caiu = 1
+            break
+
+print (caiu)
